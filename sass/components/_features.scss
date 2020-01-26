@@ -1,0 +1,167 @@
+.features{
+    padding: 4rem 6rem;
+    display: grid;
+    grid-template-rows: 8rem 75rem;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 64rem)); //max 64 and not 1fr cause I want it be in center and kinda fixed
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start; // else items stretch till end
+    &--heading{
+        grid-row: 1/2;
+        grid-column: span 2;
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
+        @include respond(tab) {
+            font-size: 2.5rem;
+        }
+        @include respond(phone) {
+            font-size: 2.5rem;
+            grid-column: auto;
+        }
+    }
+    &--text{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        margin-top: 10rem;
+        @include respond(tab) {
+            margin-top: 2rem;
+        }
+        @include respond(phone) {
+            grid-row: auto;
+            grid-column: auto;
+            margin-top: 5rem;
+        }
+    }
+    &--frame{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        height: 100%;
+        clip-path: inset(0 11% 0 11%);
+    }
+    &--img{
+        height: 100%;
+        object-fit: cover;
+        animation: kenburns-top 1s reverse;
+        &-2{
+            width: 60rem;
+            grid-row: 2/3;
+            grid-column: 2/3;
+            margin-top: 35rem;
+            justify-self: left;
+            @include respond(tab-port) {
+                width: 50rem;
+            }
+            @include respond(tab) {
+                width: 40rem;
+                margin-top: 40rem;
+            }
+            @include respond(phone) {
+                grid-row: auto;
+                grid-column: auto;
+                justify-self: auto;
+                margin-top: 5rem;
+            }
+        }
+
+    }
+    &--btn{
+        grid-row: 2/3;
+        grid-column: 2/3;
+        margin-top: 25rem;
+        position: relative;
+        @include respond(tab) {
+            margin-top: 25rem;
+        }
+        @include respond(phone) {
+            grid-row: auto;
+            grid-column: auto;
+            margin-top: 5rem;
+        }
+    }
+    &--cta:link, &--cta:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        border: solid 1px rgba(17,17,17,.35);
+        padding: 2rem 4rem;
+    }
+   /* &--cta:hover, &--cta:active{
+
+    }*/
+    &--cta{
+        &-top{
+            position: absolute;
+            left: 0;
+            top: -1.7rem;
+            width: 12.8rem;
+            height: 1px;
+            background-color: $color-black;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.25s;
+            transition-timing-function: cubic-bezier(.95,.05,.795,.035);
+            transition-delay: 0ms;
+        }
+
+        &-bottom{
+            position: absolute;
+            left: 0;
+            bottom: -1.7rem;
+            width: 12.8rem;
+            height: 1px;
+            background-color: $color-black;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.30s;
+            transition-timing-function: cubic-bezier(.19,1,.22,1);
+            transition-delay: 0.30s;    //delay so that it waits before returning back to non-hover state. The final form is placed in non-hover state
+
+        }
+        &-left{
+            position: absolute;
+            left: 0;
+            top: -1.7rem;
+            width: 1px;
+            height: 6.1rem;
+            background-color: $color-black;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 0.30s;
+            transition-timing-function: cubic-bezier(.19,1,.22,1);
+            transition-delay: 0.30s;
+
+        }
+        &-right{
+            position: absolute;
+            right: 0;
+            top: -1.7rem;
+            width: 1px;
+            height: 6.1rem;
+            background-color: $color-black;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 0.25s;
+            transition-timing-function: cubic-bezier(.95,.05,.795,.035);
+            transition-delay: 0ms;
+        }
+    }
+    &--btn{
+        &:hover .features--cta-top{
+            transform: scaleX(1);
+            transition-delay: 0.1s; //delay so that it waits before animating. 
+        }
+        &:hover .features--cta-bottom{
+            transform: scaleX(1);
+            transition-delay: 0ms;
+        }
+        &:hover .features--cta-left{
+            transform: scaleY(1);
+            transition-delay: 0ms;
+        }
+        &:hover .features--cta-right{
+            transform: scaleY(1);
+            transition-delay: 0.1s; //delay 0.1s as else animation feels crooked // although it should rightly be the difference in transition duration and transtition delay
+        }
+    }
+}

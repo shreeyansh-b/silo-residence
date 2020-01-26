@@ -1,0 +1,24 @@
+.heading--intro{
+    font-family: 'Canela', serif;
+    color: $color-white;
+    font-size: 6.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+
+
+    animation: tracking-in-contract-bck 1.5s; // this puts animation on weird postion cause animation also uses translate and so does centering in with translate so adding center translate in animation too
+}
+.heading--title{
+    color: $color-white;
+    font-size: 1.6rem;
+    backface-visibility: hidden;
+}
+.heading--red{
+    color: $color-red;
+    animation: none;
+    font-size: 3.5rem;
+}

@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "MessinaSans";
+    src: url("../fonts/MessinaSansWeb-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Canela";
+    src:  url("../fonts/Canela-Light-Web.woff") format("woff");
+}
+@font-face {
+    font-family: "MessinaSans";
+    font-weight: 600;
+    src: url("../fonts/MessinaSansWeb-SemiBold.woff") format("woff");
+}
+
+@mixin respond($breakpoint){
+    @if $breakpoint == phone-s {
+        @media (max-width: 20em){ // 320px //em cause they work better after research 
+            @content
+        };
+    }
+    @if $breakpoint == phone-l {
+        @media (max-width: 26.6em){ // 450px //em cause they work better after research 
+            @content
+        };
+    }
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){ // 600px //em cause they work better after research 
+            @content
+        };
+    }
+    @if $breakpoint == tab {
+        @media (max-width: 48em){   // 768px
+            @content
+        };
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em){ // 900px
+            @content
+        };
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em){   // 1200px
+            @content
+        };
+    }
+
+    @if $breakpoint == bigdesktop {
+        @media (min-width: 112.5em){ //1800px
+            @content
+        };
+    }
+    @if $breakpoint == fourkchromedesktop {
+        @media (min-width: 160em){ //2560px //4k
+            @content
+        };
+    }
+    @if $breakpoint == fourkdesktop {
+        @media (min-width: 240em){ //3840px //4k
+            @content
+        };
+    }
+}

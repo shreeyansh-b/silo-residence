@@ -1,0 +1,39 @@
+.kitchen{
+    background-image: linear-gradient(to bottom right, #6464644b, #9198e570), url(../images/img/kitchen.jpg);
+    padding: 4rem 6rem;
+    &__heading{
+        margin-bottom: 4rem;
+        color: #00ffd0;
+    }
+    &__content{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); //responsive if minimum width is < 45 rem then jumps to next row
+        grid-gap: 5rem;
+    }
+    &__element{
+        display: flex;
+        align-items: center;
+        background-color: rgba($color-white, 0.5);
+        padding: 2rem 3rem;
+        clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        //transform: skewY(-3deg);
+        transform: translateY(0);
+        transition: transform 0.6s ease-in-out;
+        cursor: context-menu;
+    }
+    &__element:hover{
+        transform: translateY(-0.5rem);
+    }
+    &__img{
+        width: 55rem;
+        margin-right: 2rem;
+        //transform: skewY(3deg);
+    }
+    &__image{
+        width: 100%;
+    }
+    &__text{
+        //transform: skewY(3deg);
+    }
+}

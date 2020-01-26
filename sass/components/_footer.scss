@@ -1,0 +1,94 @@
+.footer{
+    &__container{
+        display: flex;
+        align-items: center;
+    }
+    &__left{
+        width: 25%;
+        padding: 4rem 6rem;
+        @include respond(tab) {
+            padding: 2rem 3rem;
+        }
+        text-align: center;
+    }
+    &__img{
+        width: 60%;
+        @include respond(tab) {
+            width: 15rem;
+            height: 100%;
+        }
+        @include respond(phone-s) {
+            width: 8rem;
+            height: 100%;
+        }
+    }
+    &__right{
+        flex: 1;
+        background-color: $color-green;
+        padding: 4rem 6rem;
+        @include respond(tab) {
+            padding: 2rem 3rem;
+        }
+    }
+    &__lists{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10rem;
+        //flex-direction: column;
+    }
+    &__contacts{
+        list-style: none;
+        
+    }
+    &__elements{
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+        &-highlight{
+            color: $color-grey;
+            margin-right: 0.3rem;
+        }
+    }
+    &__link:link, &__link:visited{
+        text-decoration: none;
+        color: $color-white;
+        background-color: inherit;
+        align-self: center;
+        position: relative;
+        &::after{
+            display: block;
+            content: "";
+            position: absolute;  //without this it was working idk how same was with nav but the pseudo element was taking width of <li>
+            height: 1px;
+            width: 100%;
+            background-color: $color-white;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.2s cubic-bezier(.19,1,.22,1),-webkit-transform .9s cubic-bezier(.19,1,.22,1);
+        }
+    }
+    &__link:active, &__link:hover{
+        &::after{
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
+    &__nav{
+        list-style: none;
+    }
+    &__highlights{
+        list-style: none;
+    }
+    &__copyrights{
+
+    }
+    &__copyright{
+
+    }
+    &__typo{
+        font-family: 'Canela', sans-serif;
+        font-weight: 400;
+        color: $color-white;
+
+    }
+}

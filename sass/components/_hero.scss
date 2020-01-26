@@ -1,0 +1,245 @@
+.hero{
+    position: relative;
+    &__container{
+        height: 80vh;
+        width: 100%;
+        background-image: linear-gradient(to bottom right, #6464644b, #9198e570), url(../images/img/frontview.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    &__svg{
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        @include respond(tab-land) {
+            display: none;
+        }
+        @include respond(bigdesktop) {
+            width: 6rem;
+            height: 6rem;
+        } 
+        &--1{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include respond(bigdesktop) {
+
+            } 
+        }
+        &--2{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include respond(bigdesktop) {
+
+            } 
+        }
+        &--3{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include respond(bigdesktop) {
+
+            } 
+        }
+    }
+    &__hovers{
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__hover{
+        //width: 20rem;
+        //height: 14rem;
+        height: 100%;
+        background-color: transparent;
+        position: relative;
+        @include respond(tab-land) {
+            display: none;
+        }
+        &--1{
+            // top: 20rem;
+            // left: 17.2rem;
+            width: 15%;
+            margin-left: 16rem;
+            @include respond(bigdesktop) {
+
+            }
+            @include respond(fourkchromedesktop) {
+                margin-left: 30rem;
+            }
+            @include respond(fourkdesktop) {
+                margin-left: 30rem;
+            }
+        }
+        &--2{
+            // top: 18rem;
+            // left: 40rem;
+            width: 32%;
+            //width: 45rem;
+            //height: 15rem;
+            @include respond(bigdesktop) {
+                width: 30%;
+                margin-left: 5rem;
+            } 
+        }
+        &--3{
+            // top: 20rem;
+            // left: 85.5rem;
+            //flex: 1;
+            width: 27%;
+            margin-left: 2rem;
+            //width: 40rem;
+            //height: 14rem;
+            @include respond(bigdesktop) {
+                // top: 40rem;
+                // left: 158.5rem;
+                // width: 69rem;
+                // height: 21rem;
+            } 
+        }
+    }
+
+    &__link{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__rect{
+        width: 18rem;
+        position: absolute;
+        filter: drop-shadow(0px 0px 20px white);
+        @include respond(tab-land) {
+            display: none;
+        }
+
+        &--1{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.8s;
+            @include respond(bigdesktop) {
+
+            } 
+            /*&::after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: -8rem;
+                left: -1.9rem;
+                width: 2px;
+                height: 10rem;
+                background-color: #fcfcfc;
+                opacity: 0.8;
+                transform: rotateZ(-31deg);
+            }*/
+            &::before{
+                content: "Dutchess";
+                position: absolute;
+                display: block;
+                top: 40%;
+                left: 50%;
+                font-size: 1.9rem;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &--2{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.8s;
+            @include respond(bigdesktop) {
+
+            } 
+            /*&::after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: -8rem;
+                left: -1.9rem;
+                width: 2px;
+                height: 10rem;
+                background-color: #fcfcfc;
+                opacity: 0.8;
+                transform: rotateZ(-31deg);
+            }*/
+            &::before{
+                content: "Delavergne";
+                position: absolute;
+                display: block;
+                top: 40%;
+                left: 50%;
+                font-size: 1.9rem;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &--3{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.8s;
+            @include respond(bigdesktop) {
+
+            } 
+            /*&::after{
+                content: "";
+                display: block;
+                position: absolute;
+                top: -8rem;
+                left: -1.9rem;
+                width: 2px;
+                height: 10rem;
+                background-color: #fcfcfc;
+                opacity: 0.8;
+                transform: rotateZ(-31deg);
+            }*/
+            &::before{
+                content: "Corn Wall";
+                position: absolute;
+                display: block;
+                top: 40%;
+                left: 50%;
+                font-size: 1.9rem;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    &__hover--1:hover  &__rect--1{
+        opacity: 1;
+    }
+    &__hover--2:hover  &__rect--2{
+        opacity: 1;
+    }
+    &__hover--3:hover  &__rect--3{
+        opacity: 1;
+    }
+    &__svg--1:hover + &__rect--1{
+        opacity: 1;
+    }
+    &__svg--2:hover + &__rect--2{
+        opacity: 1;
+    }
+    &__svg--3:hover + &__rect--3{
+        opacity: 1;
+    }
+    &__rect--1:hover{
+        opacity: 1;
+    }
+    &__rect--2:hover{
+        opacity: 1;
+    }
+    &__rect--3:hover{
+        opacity: 1;
+    }
+    
+}

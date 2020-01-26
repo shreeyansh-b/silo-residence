@@ -1,0 +1,85 @@
+.property{
+    &__container{
+        padding: 4rem 6rem;
+    }
+    &__detail{
+        display: flex;
+        &--ordered{
+            flex-direction: row-reverse;
+            @include respond(phone) {
+                flex-direction: column;
+            }
+        }
+        @include respond(phone) {
+            flex-direction: column;
+        }
+    }
+    &__img{
+        height: 60vh;
+        width: 35%;
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        backface-visibility: hidden;
+        @include respond(phone) {
+            clip-path: none;
+            width: 100%;
+            height: 35vh;
+            margin-bottom: 5rem;
+        }
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+    }
+    &__content{
+        @include respond(phone) {
+            margin-top: 3rem;
+        }
+    }
+    &__text{
+        flex: 1 1 35%;
+        //flex-wrap: wrap;
+        margin-left: 2rem;
+        //align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    &__cta:link, &__cta:visited{
+        position: relative;
+        justify-self: center;
+        align-self: center;
+        margin-top: 2rem;
+        text-decoration: none;
+        color: $color-black;
+        font-weight: 600;
+        padding: 1rem;
+        z-index: 2;
+        transform: translateY(0);
+        transition: all 0.5s ease-in-out;
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: $color-black;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            transition: all 0.5s ease-in-out;
+            z-index: -1;
+        }
+    }
+    &__cta:active, &__cta:hover{
+        color: $color-white;
+        &::after{
+            height: 100%;
+        }
+    }
+    &__cta:active{
+        transform: translateY(0.3rem);
+    }
+    
+}

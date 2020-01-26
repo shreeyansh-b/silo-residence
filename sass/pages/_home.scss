@@ -1,0 +1,12 @@
+.container{
+    //padding: 4rem 6rem;
+}
+.welcome{
+    position: relative;
+    height: 100vh;
+    padding: 4rem 6rem;
+    @include respond(tab) {
+        padding: 2rem 4rem;
+    }
+    z-index: 4;
+}

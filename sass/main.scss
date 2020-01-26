@@ -1,0 +1,25 @@
+
+@import "utils/mixins";
+@import "utils/variables";
+
+
+
+
+
+@import "base/reset";
+@import "base/typography";
+@import "base/animation";
+
+
+
+
+@import "pages/home";
+
+@import "components/welcome";
+@import "components/features";
+@import "components/hero";
+@import "components/property";
+@import "components/residence";
+@import "components/kitchen";
+@import "components/golf";
+@import "components/footer";

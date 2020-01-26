@@ -1,0 +1,11 @@
+.residence{
+    &__bg{
+        height: 80vh;
+    }
+    &__video{
+        height: 100%;
+        width: 100%;
+        filter: saturate(1.5);
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,63 @@
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: normal;
+            /*transform: translate(-50%, -50%);*/ //to add this translateZ(tz) is equivalent to translate3d(0, 0, tz).
+            //So use translate 3d isntead of translateZ
+            //transform: translateZ(100px);
+            transform: translate3d(-50%, -50%, 100px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+            //transform: translate(-50%, -50%);
+            transform: translate3d(-50%, -50%, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-contract-bck-bottom {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px) translateY(300px);
+              transform: translateZ(400px) translateY(300px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.05) translateY(-15px);
+            transform: scale(1.05) translateY(-15px);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+}
