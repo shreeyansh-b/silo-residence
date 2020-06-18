@@ -8,7 +8,7 @@
     &__content{
         display: grid;
         grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr)); //responsive if minimum width is < 45 rem then jumps to next row
+        grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr)); //responsive if minimum width is < 45 rem then jumps to next row
         grid-gap: 5rem;
     }
     &__element{
